@@ -33,6 +33,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - move : Comienza a moverse y acumula los segundos en movimiento.
   - stop : Para y acumula los segundos que está parado.
   - finish : Finaliza el cálculo del trayecto y muestra el costo total.
+  - exit : Finaliza el programa si no quieres hacer más viajes.
 
 ### 🛠️ Tecnologías Usadas
   - Python
@@ -52,7 +53,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
 
     python main.py
 
-2.- Usa las palabras clave : *start*, *move*, *stop* y *finish*. 
+2.- Usa las palabras clave : *start*, *move*, *stop*, *finish* y *exit*. 
 
 ### 🪪 Contacto
 Si tienes cualquier sugerencia o consulta, contáctame a través de juanmanuel.iriondo@gmail.com

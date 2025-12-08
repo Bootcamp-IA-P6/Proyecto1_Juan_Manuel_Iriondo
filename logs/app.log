@@ -1,0 +1,15 @@
+2025-12-08 18:28:49,492 - logs - DEBUG - Inicio del LOG.
+2025-12-08 18:28:52,672 - logs - INFO - Trip started. Initial state: 'stopped'.
+2025-12-08 18:28:55,120 - logs - INFO - State changed to 'moving'.
+2025-12-08 18:29:03,236 - logs - INFO - State changed to 'stopped'.
+2025-12-08 18:29:09,676 - logs - WARNING - Unknown command. Use: start, stop, move, finish, or exit.
+2025-12-08 18:29:12,532 - logs - INFO - State changed to 'moving'.
+2025-12-08 18:29:18,373 - logs - INFO - 
+--- Trip Summary ---
+2025-12-08 18:29:18,373 - logs - INFO - Stopped time: 11.7 seconds
+2025-12-08 18:29:18,373 - logs - INFO - Moving time: 14.0 seconds
+2025-12-08 18:29:18,373 - logs - INFO - Total fare: € 0.93
+2025-12-08 18:29:18,373 - logs - INFO - ---------------------
+
+2025-12-08 18:29:20,899 - logs - INFO - Salida del programa.
+

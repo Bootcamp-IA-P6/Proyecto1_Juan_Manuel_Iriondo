@@ -18,11 +18,18 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - Finalizar un trayecto y mostrar el total en euros.
   - Permitir iniciar un nuevo trayecto sin cerrar el programa.
 
+### 🟡 Nivel Medio
+
+- Implementar un sistema de logs para la trazabilidad del código.
+
 ### 📢 Explicación
-- Este programa usa dos funciones :
+- Este programa usa dos funciones en main.py :
   - **calculate_fare(seconds_stopped, seconds_moving)** función para calcular la tarifa a pagar una vez terminado el viaje.
   Los parámetros seconds_stopped y seconds_moving son 2 contadores que acumulan los segundos que el taxi está parado y en movimiento.
   - **taximeter()**, ésta es la función principal que muestra en la terminal el menu del programa, llama a la función **calculate_fare** para que calcule la tarifa, inicializa las variables que necesita y muestra los mensajes necesarios para el desarrollo del programa.
+
+- El fichero *logs.py* contiene la función **init_log()** que se importa en *main.py* y se usa para iniciar el sistema de logs.
+  - Esta función devuelve un *logger* que se usa en *main.py* para ir anotando la trazabilidad en el fichero *app.log* de la carpeta *logs*
 
 - El programa calcula la tarifa total en euros.
   - la tarifa cuando el taxi está parado es de **0.02 €/sg**
@@ -34,6 +41,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - stop : Para y acumula los segundos que está parado.
   - finish : Finaliza el cálculo del trayecto y muestra el costo total.
   - exit : Finaliza el programa si no quieres hacer más viajes.
+  - Mientras se ejecuta el programa, internamente se genera un sistema de logs para la trazabilidad del código.
 
 ### 🛠️ Tecnologías Usadas
   - Python

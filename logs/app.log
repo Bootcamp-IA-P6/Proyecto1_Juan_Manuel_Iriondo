@@ -13,3 +13,36 @@
 
 2025-12-08 18:29:20,899 - logs - INFO - Salida del programa.
 
+2025-12-09 13:46:12,013 - logs - DEBUG - Inicio del LOG.
+2025-12-09 13:46:49,701 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:00:34,349 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:00:43,407 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:01:36,683 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:02:43,255 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:03:43,208 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:08:27,584 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:08:31,278 - logs - INFO - Trip started. Initial state: 'stopped'.
+2025-12-09 14:08:35,143 - logs - INFO - State changed to 'moving'.
+2025-12-09 14:08:42,259 - logs - INFO - 
+--- Trip Summary ---
+2025-12-09 14:08:42,260 - logs - INFO - Stopped time: 3.9 seconds
+2025-12-09 14:08:42,260 - logs - INFO - Moving time: 7.1 seconds
+2025-12-09 14:08:42,260 - logs - INFO - Total fare: € 7.38
+2025-12-09 14:08:42,260 - logs - INFO - ---------------------
+
+2025-12-09 14:08:46,536 - logs - INFO - Salida del programa.
+
+2025-12-09 14:09:21,800 - logs - DEBUG - Inicio del LOG.
+2025-12-09 14:09:24,193 - logs - INFO - Trip started. Initial state: 'stopped'.
+2025-12-09 14:09:26,974 - logs - INFO - State changed to 'moving'.
+2025-12-09 14:09:30,311 - logs - INFO - State changed to 'stopped'.
+2025-12-09 14:09:34,045 - logs - INFO - State changed to 'moving'.
+2025-12-09 14:09:38,930 - logs - INFO - 
+--- Trip Summary ---
+2025-12-09 14:09:38,931 - logs - INFO - Stopped time: 6.5 seconds
+2025-12-09 14:09:38,931 - logs - INFO - Moving time: 8.2 seconds
+2025-12-09 14:09:38,931 - logs - INFO - Total fare: € 0.54
+2025-12-09 14:09:38,931 - logs - INFO - ---------------------
+
+2025-12-09 14:09:44,393 - logs - INFO - Salida del programa.
+

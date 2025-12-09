@@ -34,6 +34,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
 - El programa calcula la tarifa total en euros.
   - la tarifa cuando el taxi está parado es de **0.02 €/sg**
   - la tarifa cuando el taxi está en movimiento es de **0.05 €/sg**
+  - el fichero *prices.txt* te da la opción de cambiar los precios.
 
 ### 🔍 Funcionalidades
   - start : Comienza a calcular el tiempo y el costo del proyecto.
@@ -42,6 +43,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - finish : Finaliza el cálculo del trayecto y muestra el costo total.
   - exit : Finaliza el programa si no quieres hacer más viajes.
   - Mientras se ejecuta el programa, internamente se genera un sistema de logs para la trazabilidad del código.
+  - En el fichero **prices.txt** podemos cambiar los precios para que la aplicación los tenga en cuenta a la hora de hacer los cálculos. Hay que cambiar los precios después del igual.
 
 ### 🛠️ Tecnologías Usadas
   - Python

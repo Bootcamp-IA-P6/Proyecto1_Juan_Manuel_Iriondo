@@ -1,14 +1,18 @@
 import time
 
 import logs
+import prices
 
 def calculate_fare(seconds_stopped, seconds_moving):
     """
     función para calcular la tarifa total en euros.
-    - Stopped: 0.02 €/s
-    - Moving: 0.05 €/s
+    - Stopped: depende del valor anotado en price_stopped en el fichero prices.txt €/s
+    - Moving: depende del valor anotado en price_moving en el fichero prices.txt €/s
     """
-    fare = seconds_stopped * 0.02 + seconds_moving * 0.05
+    
+    price_moving, price_stopped = prices.read_prices()
+    fare = seconds_stopped * price_stopped + seconds_moving * price_moving
+
     print(f"Este es el total: {fare}")
     return fare
 

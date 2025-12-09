@@ -23,6 +23,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
 - Implementar un sistema de logs para la trazabilidad del código.
 - Permitir la configuración de precios para adaptarse a la demanda actual.
 - Crear un registro histórico de trayectos pasados en un archivo de texto plano.
+- Agregar tests unitarios para asegurar el correcto funcionamiento del programa.
 
 ### 📢 Explicación
 - Este programa usa dos funciones en main.py :
@@ -40,6 +41,8 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
 
 - El fichero *historical.py* contiene la función **num_lin_file(file)** a la que le pasas el nombre de un fichero de texto, se importa en *main.py* y te devuelve el número de líneas de ese fichero que se usa en *main.py* para ir creando un histórico de rutas en el fichero *historical.txt* de la carpeta *historical*
 
+- Los ficheros *test_log.py* y *test_general.py* son 2 ficheros para hacer tests unitarios de las diferentes funciones del programa. Para que funcione es necesario instalar la libreria **pytest** y se instala con el comando *git install pytest*
+
 ### 🔍 Funcionalidades
   - start : Comienza a calcular el tiempo y el costo del proyecto.
   - move : Comienza a moverse y acumula los segundos en movimiento.
@@ -49,9 +52,11 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - Mientras se ejecuta el programa, internamente se genera un sistema de logs para la trazabilidad del código.
   - En el fichero **prices.txt** podemos cambiar los precios para que la aplicación los tenga en cuenta a la hora de hacer los cálculos. Hay que cambiar los precios después del igual.
   - Mientras se ejecuta el programa, internamente se genera un registro histórico de trayectos pasados en un archivo de texto plano.
+  - Para realizar los tests hay que ejecutar el comando **pytest** que se encargará de lanzar las pruebas de los ficheros *test_log.py* y *test_general.py*
 
 ### 🛠️ Tecnologías Usadas
   - Python
+  - pytest
 
 ### 💾 Instalación
 1.- Clona el repositorio
@@ -69,6 +74,10 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
     python main.py
 
 2.- Usa las palabras clave : *start*, *move*, *stop*, *finish* y *exit*. 
+
+3.- Para realizar los tests unitarios que están en **test_log.py** y **test_general.py**, ejecuta el comando
+
+    pytest
 
 ### 🪪 Contacto
 Si tienes cualquier sugerencia o consulta, contáctame a través de juanmanuel.iriondo@gmail.com

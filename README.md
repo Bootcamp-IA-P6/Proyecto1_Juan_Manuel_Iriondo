@@ -21,6 +21,8 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
 ### 🟡 Nivel Medio
 
 - Implementar un sistema de logs para la trazabilidad del código.
+- Permitir la configuración de precios para adaptarse a la demanda actual.
+- Crear un registro histórico de trayectos pasados en un archivo de texto plano.
 
 ### 📢 Explicación
 - Este programa usa dos funciones en main.py :
@@ -36,6 +38,8 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - la tarifa cuando el taxi está en movimiento es de **0.05 €/sg**
   - el fichero *prices.txt* te da la opción de cambiar los precios.
 
+- El fichero *historical.py* contiene la función **num_lin_file(file)** a la que le pasas el nombre de un fichero de texto, se importa en *main.py* y te devuelve el número de líneas de ese fichero que se usa en *main.py* para ir creando un histórico de rutas en el fichero *historical.txt* de la carpeta *historical*
+
 ### 🔍 Funcionalidades
   - start : Comienza a calcular el tiempo y el costo del proyecto.
   - move : Comienza a moverse y acumula los segundos en movimiento.
@@ -44,6 +48,7 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
   - exit : Finaliza el programa si no quieres hacer más viajes.
   - Mientras se ejecuta el programa, internamente se genera un sistema de logs para la trazabilidad del código.
   - En el fichero **prices.txt** podemos cambiar los precios para que la aplicación los tenga en cuenta a la hora de hacer los cálculos. Hay que cambiar los precios después del igual.
+  - Mientras se ejecuta el programa, internamente se genera un registro histórico de trayectos pasados en un archivo de texto plano.
 
 ### 🛠️ Tecnologías Usadas
   - Python

@@ -1,7 +1,10 @@
 import time
+import os
+from datetime import datetime
 
 import logs
 import prices
+import historical
 
 def calculate_fare(seconds_stopped, seconds_moving):
     """
@@ -102,6 +105,13 @@ def taximeter():
             logger.info(f"Total fare: € {total_fare:.2f}")
             logger.info("---------------------\n")
 
+            # Nivel medio HISTORICAL
+            num_lin = historical.num_lin_file(historical_path)
+            now = datetime.now()
+            with open(historical_path, "a", encoding="utf-8") as file:
+                file.write(f"{num_lin + 1} Trip = Stopped time: {stopped_time:.1f} seconds - Moving time: {moving_time:.1f} seconds" \
+                             f" - Total fare: € {total_fare:.2f} - Date: {now}.\n")
+
             # Reset las variables para el próximo viaje
             trip_active = False
             state = None
@@ -124,5 +134,15 @@ if __name__ == "__main__":
     # Crea un logger con la función init_log() para poder escribir los logs en el fichero app.log en la carpeta logs/
     logger = logs.init_log()
     logger.debug('Inicio del LOG.')
+
+    # Nivel medio HISTORICO
+    #######################
+    # Crea el fichero historical.txt en la carpeta historical si no existen, si existen abre el fichero en modo append
+    historical_file = 'historical.txt'
+    historical_path = os.path.join('historical', historical_file)
+    os.makedirs(os.path.dirname(historical_path), exist_ok=True)
+    with open(historical_path, "a", encoding="utf-8") as file:
+        pass
+
 
     taximeter()

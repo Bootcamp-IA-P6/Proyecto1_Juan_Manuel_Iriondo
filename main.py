@@ -1,11 +1,21 @@
 import time
+import os
+from datetime import datetime
+
+import logs
+import prices
+import historical
+
 def calculate_fare(seconds_stopped, seconds_moving):
     """
     función para calcular la tarifa total en euros.
-    - Stopped: 0.02 €/s
-    - Moving: 0.05 €/s
+    - Stopped: depende del valor anotado en price_stopped en el fichero prices.txt €/s
+    - Moving: depende del valor anotado en price_moving en el fichero prices.txt €/s
     """
-    fare = seconds_stopped * 0.02 + seconds_moving * 0.05
+    
+    price_moving, price_stopped = prices.read_prices()
+    fare = seconds_stopped * price_stopped + seconds_moving * price_moving
+
     print(f"Este es el total: {fare}")
     return fare
 
@@ -29,7 +39,10 @@ def taximeter():
         if command == "start":
             if trip_active:
                 print("Error: A trip is already in progress.")
+                # Nivel medio LOG
+                logger.error('A trip is already in progress.')
                 continue
+
             trip_active = True
             start_time = time.time()
             stopped_time = 0
@@ -38,10 +51,16 @@ def taximeter():
             state_start_time = time.time()
             print("Trip started. Initial state: 'stopped'.")
 
+            # Nivel medio LOG
+            logger.info("Trip started. Initial state: 'stopped'.")
+
         elif command in ("stop", "move"):
             if not trip_active:
                 print("Error: No active trip. Please start first.")
+                # Nivel medio LOG
+                logger.error('No active trip. Please start first.')
                 continue
+
             # Calcula el tiempo del estado anterior
             duration = time.time() - state_start_time
             if state == 'stopped':
@@ -54,10 +73,16 @@ def taximeter():
             state_start_time = time.time()
             print(f"State changed to '{state}'.")
 
+            # Nivel medio LOG
+            logger.info(f"State changed to '{state}'.")
+
         elif command == "finish":
             if not trip_active:
                 print("Error: No active trip to finish.")
+                # Nivel medio LOG
+                logger.error('A trip is already in progress.')
                 continue
+
             # Agrega tiempo del último estado
             duration = time.time() - state_start_time
             if state == 'stopped':
@@ -73,16 +98,51 @@ def taximeter():
             print(f"Total fare: €{total_fare:.2f}")
             print("---------------------\n")
 
+            # Nivel medio LOG
+            logger.info(f"\n--- Trip Summary ---")
+            logger.info(f"Stopped time: {stopped_time:.1f} seconds")
+            logger.info(f"Moving time: {moving_time:.1f} seconds")
+            logger.info(f"Total fare: € {total_fare:.2f}")
+            logger.info("---------------------\n")
+
+            # Nivel medio HISTORICAL
+            num_lin = historical.num_lin_file(historical_path)
+            now = datetime.now()
+            with open(historical_path, "a", encoding="utf-8") as file:
+                file.write(f"{num_lin + 1} Trip = Stopped time: {stopped_time:.1f} seconds - Moving time: {moving_time:.1f} seconds" \
+                             f" - Total fare: € {total_fare:.2f} - Date: {now}.\n")
+
             # Reset las variables para el próximo viaje
             trip_active = False
             state = None
 
         elif command == "exit":
             print("Exiting the program. Goodbye!")
+            # Nivel medio LOG
+            logger.info('Salida del programa.\n')
             break
 
         else:
             print("Unknown command. Use: start, stop, move, finish, or exit.")
+            # Nivel medio LOG
+            logger.warning('Unknown command. Use: start, stop, move, finish, or exit.')
 
 if __name__ == "__main__":
+
+    # Nivel medio LOG
+    #################
+    # Crea un logger con la función init_log() para poder escribir los logs en el fichero app.log en la carpeta logs/
+    logger = logs.init_log()
+    logger.debug('Inicio del LOG.')
+
+    # Nivel medio HISTORICO
+    #######################
+    # Crea el fichero historical.txt en la carpeta historical si no existen, si existen abre el fichero en modo append
+    historical_file = 'historical.txt'
+    historical_path = os.path.join('historical', historical_file)
+    os.makedirs(os.path.dirname(historical_path), exist_ok=True)
+    with open(historical_path, "a", encoding="utf-8") as file:
+        pass
+
+
     taximeter()

@@ -63,19 +63,25 @@ Desarrollar un programa CLI (Interfaz de Línea de Comandos) en Python.
 
     git clone https://github.com/Bootcamp-IA-P6/Proyecto1_Juan_Manuel_Iriondo.git
 
-2.- Navega al directorio de proyecto
+2.- Navega al directorio del proyecto
 
-    cd dir Proyecto1_Juan_Manuel_Iriondo ??????
+    cd "directorio_del_proyecto"
 
 ### 🚀 Uso
 
-1.- Ejecuta el archivo **main.py**
+1.- Instala un entorno virtual, actívalo e instala las librerías
+
+    python -m venv venv
+    source venv/Scripts/activate
+    pip install -r requirements.txt
+
+2.- Ejecuta el archivo **main.py**
 
     python main.py
 
-2.- Usa las palabras clave : *start*, *move*, *stop*, *finish* y *exit*. 
+3.- Usa las palabras clave : *start*, *move*, *stop*, *finish* y *exit*.
 
-3.- Para realizar los tests unitarios que están en **test_log.py** y **test_general.py**, ejecuta el comando
+4.- Para realizar los tests unitarios que están en **test_log.py** y **test_general.py**, ejecuta el comando
 
     pytest
 

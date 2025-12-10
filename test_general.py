@@ -19,7 +19,7 @@ def test_calculate_fare_operation(seconds_stopped, seconds_moving, expected):
 
 # Tests para funciones del fichero historical
 def test_file_count_lins():
-    assert num_lin_file("./historical/historical.txt") == 4
+    assert num_lin_file("./historical/historical.txt") == 2
 
 def test_file_empty_count_lins():
     assert num_lin_file("./historical/historical_vacio.txt") == 0

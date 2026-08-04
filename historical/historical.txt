@@ -1,2 +1,4 @@
 1 Trip = Stopped time: 2.0 seconds - Moving time: 6.3 seconds - Total fare: € 0.35 - Date: 2025-12-10 18:07:45.641554.
 2 Trip = Stopped time: 5.1 seconds - Moving time: 7.4 seconds - Total fare: € 0.47 - Date: 2025-12-10 18:08:03.454353.
+3 Trip = Stopped time: 7.1 seconds - Moving time: 8.6 seconds - Total fare: € 0.57 - Date: 2025-12-11 13:29:52.778848
+4 Trip = Stopped time: 5.2 seconds - Moving time: 9.2 seconds - Total fare: € 0.56 - Date: 2025-12-11 14:32:50.947200

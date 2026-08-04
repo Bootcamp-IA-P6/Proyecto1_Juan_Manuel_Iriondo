@@ -1,0 +1,16 @@
+venv/
+**/__pycache__/
+.git/
+.gitignore
+.pytest_cache/
+.vscode/
+*.pyc
+
+# Datos generados en local: se crean/persisten en tiempo de ejecución
+historical/*.csv
+historical/*.txt
+logs/*.log
+
+# Tests: no son necesarios dentro de la imagen de runtime
+test_general.py
+test_log.py
